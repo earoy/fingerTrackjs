@@ -11,7 +11,7 @@
     <script>
 
     function randEq(canvas, radius){
-    	//placeholder
+    	//placeholder to generate random equation
 
     	var ops = ['+','-']
 
@@ -30,6 +30,7 @@
 
 
     var number_line= {
+    	//experiment object that lets us display a question and poential responses
     	stimulus: function (c) {
         randEq(c, 100,);
     	},
@@ -39,10 +40,10 @@
     	}
 
 
-		var repetition_count = 0;    
+		   
 		jsPsych.init({
+			//jsPsych timeline that let's us run the experiment
 	        timeline: [number_line,number_line,number_line,number_line,number_line],
-	        repetitions: 5,
         on_finish: function() {
    			 jsPsych.data.displayData();
   			}
