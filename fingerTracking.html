@@ -3,14 +3,36 @@
     <head>
         <title>FingerTrackjs</title>
         <script src="jspsych-6.3.0/jspsych.js"></script>
+ 		<script src="jspsych-6.3.0/plugins/jspsych-html-button-response.js"></script>
  		<script src="jspsych-6.3.0/plugins/jspsych-canvas-button-response.js"></script>
         <link href="jspsych-6.3.0/css/jspsych.css" rel="stylesheet" type="text/css">
     </head>
+    <style>
+    	
+		#jspsych-canvas-button-response-btngroup{
+			height: 7;
+		}
+
+		#jspsych-canvas-button-response-stimulus {
+		  position:absolute;
+		  color: black;
+		  top: -30%;
+		  right:-3%;
+		}
+
+		#jspsych-canvas-button-response-btngroup {
+		  position:absolute;
+		  color: black;
+		  top: 10%;
+		  right:30%;
+		}
+
+    </style>
     <body></body>
 
     <script>
 
-    function randEq(canvas, radius){
+    	function randEq(canvas, radius){
     	//placeholder to generate random equation
 
     	var ops = ['+','-']
