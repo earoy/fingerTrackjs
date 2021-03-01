@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FingerTrackjs</title>
+        <script src="jspsych-6.3.0/jspsych.js"></script>
+ 		<script src="jspsych-6.3.0/plugins/jspsych-canvas-button-response.js"></script>
+        <link href="jspsych-6.3.0/css/jspsych.css" rel="stylesheet" type="text/css">
+    </head>
+    <body></body>
+
+    <script>
+
+    function randEq(canvas, radius){
+    	//placeholder
+
+    	var ops = ['+','-']
+
+    	var op1 = Math.floor(Math.random() * 10);
+    	var op2 = Math.floor(Math.random() * 10);
+
+    	var opInd = Math.floor(Math.random() * 2);
+
+    	var op=ops[opInd]
+
+	    var ctx = canvas.getContext("2d");
+	    ctx.font = "30px Arial";
+	    ctx.textAlign = "center";
+		ctx.fillText(op1+op+op2, canvas.width/2, canvas.height/2);
+	}
+
+
+    var number_line= {
+    	stimulus: function (c) {
+        randEq(c, 100,);
+    	},
+        type: 'canvas-button-response',
+        choices: [0,1,2,3,4,5,6,7,8,9],
+        canvas_size: [window.innerHeight-200, window.innerWidth]
+    	}
+
+
+		var repetition_count = 0;    
+		jsPsych.init({
+	        timeline: [number_line,number_line,number_line,number_line,number_line],
+	        repetitions: 5,
+        on_finish: function() {
+   			 jsPsych.data.displayData();
+  			}
+    	})
+
+
+    </script>
+
+</html>
